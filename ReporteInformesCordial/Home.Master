@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="ReporteInformesCordial.Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css" />
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<%--    <link rel="stylesheet" href="https://getbootstrap.com/dist/css/bootstrap.min.css">--%>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+
+    <title>Informes Cruz Verde Bienvenida</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        </div>
+        <div id="viewport">
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <header>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2_Empresa" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                </header>
+                <%--<ul class="nav dropdown-backdrop">
+                      <li><a href="../Consultas/ConsultaGuias.aspx">Consignatario</a></li>
+                      <li><a href="../Consultas/ConsultaHAWB.aspx">Guías HAWB</a></li>
+                      <li><a href="../Consultas/ConsultaOrigen.aspx">Origen HAWB</a></li>
+                      <li><a href="../Consultas/ResumenGuias.aspx">Resumen HAWB</a></li>
+                      <li><a href="../Consultas/DepuracionAduana.aspx">Estado de Depuración</a></li>
+                      <li><a href="../Consultas/Consultas.aspx">Régimen Importación</a></li>
+                      <li><a href="../Consultas/ResumenDips.aspx">Resumen Dips</a></li>
+                </ul>--%>
+               <!-- Basic dropdown -->
+<%--<button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
+  aria-haspopup="true" aria-expanded="false">Basic dropdown</button>
+
+<div class="dropdown-menu">
+  <a class="dropdown-item" href="#">Action</a>
+  <a class="dropdown-item" href="#">Another action</a>
+  <a class="dropdown-item" href="#">Something else here</a>
+</div>--%>
+<!-- Basic dropdown -->
+
+
+                 
+                <%--<div class="btn-group">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Action <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li role="separator" class="divider"></li>
+<li><a href="#">Separated link</a></li>
+</ul>
+</div>--%>
+
+                <ul class="nav">
+                    <li><a href="Reportes.aspx" runat="server" id="enlace" onclick="" style="height: 53px"><i class="zmdi zmdi-view-dashboard" runat="server"></i>Informe calidad</a></li>
+                    <li><a href="Reportes2.aspx" runat="server" id="enlace1" style="height: 53px"><i class="zmdi zmdi-link"></i>Resultante</a></li>
+                    <li><a href="SegmentadorBienvenida.aspx"><i class="zmdi zmdi-widgets"></i> Segmentador</a></li>
+                    </ul>
+      <%--<li>
+        <a href="#">
+          <i class="zmdi zmdi-calendar"></i> Events
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="zmdi zmdi-info-outline"></i> About
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="zmdi zmdi-settings"></i> Services
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="zmdi zmdi-comment-more"></i> Contact
+        </a>
+      </li>--%>
+               <%-- </ul>--%>
+            </div>
+            <!-- Content -->
+            <div id="content">
+                <nav class="navbar navbar-default"></nav>
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <%--<a href="#"><i class="zmdi zmdi-notifications text-danger" ></i>--%>
+                                    <%--<asp:Label CssClass="zmdi zmdi-notifications text-danger"></asp:Label>--%>
+                                <asp:Label ID="lblNombre" runat="server" Text="Label" CssClass="zmdi zmdi-notifications text-danger" Visible="False"></asp:Label>
+                                <%--</a>--%>
+                            </li>
+
+                        </ul>
+                    </div>
+                     <div class="container-fluid">                   
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1_Cuerpo" runat="server">
+                        </asp:ContentPlaceHolder>                   
+                     </div>
+                        <%--<asp:ContentPlaceHolder ID="ContentPlaceHolder2_Cuerpo" runat="server">
+                        </asp:ContentPlaceHolder>--%>
+                    <%--</div>--%>
+
+                    <div class="container-fluid">                    
+                         <asp:ContentPlaceHolder ID="ContentPlaceHolder2_Cuerpo" runat="server">
+                        </asp:ContentPlaceHolder>                        
+                    </div>
+            </div>
+        </div>
+    </form>
+    <script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<%--    <script src="vendor/bootstrap/js/bootstrap.js" type="text/javascript"></script>--%>
+</body>
+</html>
